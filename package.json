@@ -1,0 +1,40 @@
+{
+  "name": "finnans",
+  "version": "1.0.0",
+  "description": "Finnancial tracker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magendev-by-Angel/Finnans.git"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "tailwind"
+  ],
+  "author": "Magen-z",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magendev-by-Angel/Finnans/issues"
+  },
+  "homepage": "https://github.com/Magendev-by-Angel/Finnans#readme",
+  "dependencies": {
+    "next": "^13.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.35",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.4"
+  }
+}
