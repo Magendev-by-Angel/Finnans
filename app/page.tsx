@@ -5,16 +5,6 @@ import { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 
 const Page = () => {
-<<<<<<< HEAD
-	//test comment
-	const router = useRouter();
-	const pathname = usePathname();
-	console.log(router);
-	console.log(pathname);
-	return <div>Page</div>;
-};
-export default Page;
-=======
 	const [percentage, setPercentage] = useState<number>(10)
 	return (
 		<div>
@@ -63,4 +53,3 @@ export default Page;
 	)
 }
 export default Page
->>>>>>> d0ad054d6b696fa27a111c777215d09557e2521b
