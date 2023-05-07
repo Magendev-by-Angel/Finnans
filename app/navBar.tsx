@@ -7,9 +7,10 @@ const NavLink = ({ href, children }) => {
 		<Link
 			href={href}
 			className={`
+				pr-4
+				mr-4
                 relative
                 after:content-['']
-                
                 after:h-px
                 after:bg-white
                 after:absolute
@@ -30,24 +31,29 @@ const NavLink = ({ href, children }) => {
 }
 
 const NavBar = () => {
+	const Links = [
+		{ href: '/', label: 'Home' },
+		{ href: '/add', label: 'Add' },
+		{ href: '/history', label: 'History' },
+		{ href: '/about', label: 'About' },
+		{ href: '/contactus', label: 'Contact us' }
+	]
 	return (
 		<div
 			className="
-            bg-[#1F1A26]
+            bg-[#42339C19]
             flex
             p-4
             
         "
 		>
 			<div className="flex justify-center items-center w-1/5">Logo</div>
-			<div className="grid grid-cols-10 gap-4 w-3/5">
-				<NavLink href="/">Home</NavLink>
-				<NavLink href="#">Profile</NavLink>
-				<NavLink href="#">Settings</NavLink>
+			<div className="flex justify-start  w-1/2">
+				{Links.map(({ href, label }) => (
+					<NavLink href={href}>{label}</NavLink>
+				))}
 			</div>
-			<div className="flex justify-center items-center w-1/5">
-				Profile
-			</div>
+			<div className="flex justify-center items-center w-1/5">Logout</div>
 		</div>
 	)
 }

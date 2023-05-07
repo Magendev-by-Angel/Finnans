@@ -22,6 +22,15 @@ const days = [
 	'Friday',
 	'Saturday'
 ]
+
+const Loader = () => {
+	return (
+		<div className="w-full h-full flex justify-center items-center bg-red-500">
+			loader
+		</div>
+	)
+}
+
 const Overview = () => {
 	interface dateObj {
 		Date: number
@@ -44,12 +53,15 @@ const Overview = () => {
 		<section className="w-full flex justify-center">
 			<div className="w-8/12 flex">
 				<div className="w-1/2">
-					<h2 className="text-4xl">{date ? date.Day : ''}</h2>
+					<h2 className="text-xl">Angel Zuniga</h2>
 					<div className="flex justify-start mt-4">
+						<h3 className="">{date ? date.Day : ''}</h3>
 						<div>
-							{date
-								? `${date.Month} ${date.Date}, ${date.Year} `
-								: ''}
+							{date ? (
+								`${date.Month} ${date.Date}, ${date.Year} `
+							) : (
+								<Loader />
+							)}
 						</div>
 					</div>
 				</div>
