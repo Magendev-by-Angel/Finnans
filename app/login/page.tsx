@@ -1,55 +1,82 @@
 'use client'
 import React, { useState } from 'react'
+import Aside from '../../components/aside'
 // import { useRouter, usePathname } from 'next/navigation'
 
+type InputProps = {
+	label: string
+	type: string
+	value: string
+	setValue: React.Dispatch<React.SetStateAction<string>>
+}
+const Input = ({ label, type, value, setValue }: InputProps) => {
+	return (
+		<>
+			<label htmlFor={label} className="text-[#535353] mt-4">
+				{label}
+			</label>
+			<input
+				type={type}
+				className="w-full rounded-md p-2 text-black"
+				value={value}
+				onChange={e => {
+					e.preventDefault()
+					setValue(e.target.value)
+				}}
+				id={label}
+				name={label}
+				aria-label={label}
+			/>
+		</>
+	)
+}
 const Form = () => {
-	const inputStyle = 'w-full rounded-md p-2 text-black'
-	const Input = ({ label, type }) => {
-		return (
-			<>
-				<div className="text-[#535353] mt-4">{label}</div>
-				<input type={type} className={inputStyle} />
-			</>
-		)
-	}
+	const [[password, setPassword], [email, setEmail]] = [
+		useState<string>(''),
+		useState<string>('')
+	]
+	// (property) InputHTMLAttributes<HTMLInputElement>.value?: string | number | readonly string[]
 
 	return (
-		<form
-			action=""
-			className="w-1/2 h-full bg-[#D9D9D9] flex justify-center items-center"
-		>
+		<form action="" className="form-log-reg">
 			<div className="h-[87%] w-4/5 flex flex-col ">
-				<h1 className="text-black w-full flex justify-center text-4xl">
-					Welcome
-				</h1>
-				<div className="text-[#7B7979] text-[14px] w-full flex leading-4 mt-4">
+				<h1 className="form-log-reg-h1">Welcome</h1>
+				<div className="form-log-reg-message">
 					Say goodbye to overspending and hello to financial freedom.
 					Join Finnas and start tracking your expenses with ease
 				</div>
-				<Input type="email" label="email" />
-				<Input type="password" label="password" />
+				<Input
+					type="email"
+					label="email"
+					setValue={setEmail}
+					value={email}
+				/>
+				<Input
+					type="password"
+					label="password"
+					setValue={setPassword}
+					value={password}
+				/>
 				<a href="/#" className="text-[#8B72A3] flex justify-end my-4">
 					Forgot password?
 				</a>
-				<button className="bg-[#523869] text-white w-full rounded-md p-2 hover:bg-[#49315e]">
-					Login
-				</button>
+				<button className="form-submit-button">Login</button>
 				<span className="w-full flex justify-center my-8 text-[#7B7979] text-sm">
 					or
 				</span>
 				<button className="bg-white text-[#A1A1A1] w-full rounded-md p-2 hover:bg-[#f5f5f5]">
 					Continue with google
 				</button>
-				<div className="flex text-[#535353] font-semibold text-sm w-full justify-center mt-4">
+				<div className="form-signin-login-box">
 					You don’t have an account yet?
-					<a href="#" className="ml-1 font-medium text-[#82778D]">
+					<a href="/register" className="redirect-link">
 						Sign up
 					</a>
 				</div>
-				<div className="flex text-[#535353] font-semibold text-sm justify-center mt-4 flex-auto items-end w-full">
+				<div className="form-terms-of-service">
 					<div className="w-4/5 text-center">
 						by creating and account you agree to our
-						<a href="#" className="ml-1 font-medium text-[#82778D]">
+						<a href="#" className="redirect-link">
 							Terms of Service
 						</a>
 					</div>
@@ -62,41 +89,8 @@ const Form = () => {
 const Page = () => {
 	return (
 		<section className="w-screen h-screen flex justify-center items-center">
-			<main className="w-1/2 h-3/4 flex bg-[#51515133] rounded-2xl overflow-hidden max-w-[864px]">
-				<aside className="w-1/2 h-full flex items-center justify-center">
-					<div className="h-[87%] w-4/5">
-						<div className="h-3/5 text-[36px] font-semibold">
-							Get in control of your spending with Finnas - the
-							easy-to-use spending tracker that helps you stay on
-							top of your finances.
-						</div>
-						<div className="h-2/5 flex flex-wrap items-end">
-							<div className="w-full bg-[#82778D33] p-4 rounded-xl">
-								<div className="text-xs text-[11px] font-thin">
-									I've been using Finnas for a few weeks now
-									and it's been a game-changer for me. It's so
-									easy to track my spending and see where my
-									money is going each week, month, and year.
-								</div>
-								<div className="flex mt-4">
-									<div>Icon</div>
-									<div className="ml-2">
-										<div className="text-sm font-bold">
-											John Smith
-										</div>
-										<div className="text-xs">
-											Accountant
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="flex justify-center items-end w-full">
-								<div className="h-[10px] mx-1 w-[10px] rounded-full bg-[#D9D9D9]"></div>
-								<div className="h-[10px] mx-1 w-[10px] rounded-full bg-[#D9D9D999]"></div>
-							</div>
-						</div>
-					</div>
-				</aside>
+			<main className="main-log-reg">
+				<Aside />
 				<Form />
 			</main>
 		</section>

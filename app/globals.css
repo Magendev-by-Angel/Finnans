@@ -5,3 +5,66 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 }
+
+.redirect-link {
+	@apply ml-1 font-medium text-[#82778D] relative after:content-[''] after:w-0 after:h-px after:bg-[#82778D] after:absolute after:left-0 after:bottom-0 hover:after:w-full;
+}
+.form-submit-button {
+	@apply bg-[#523869] text-white w-full rounded-md p-2 hover:bg-[#49315e];
+}
+.form-terms-of-service {
+	@apply flex text-[#535353] font-semibold text-sm justify-center mt-4 flex-auto items-end w-full;
+}
+.form-signin-login-box {
+	@apply flex text-[#535353] font-semibold text-sm w-full justify-center mt-4;
+}
+.form-log-reg-h1 {
+	@apply xl:text-black text-white w-full flex justify-center text-4xl;
+}
+.form-log-reg-message {
+	@apply text-[#7B7979] text-[14px] w-full flex leading-4 mt-4;
+}
+.form-log-reg {
+	@apply w-full xl:w-1/2 h-full xl:bg-[#D9D9D9] flex justify-center items-center;
+}
+.main-log-reg {
+	@apply md:w-1/2 h-3/4 flex md:bg-[#51515133] bg-[#51515100] rounded-2xl overflow-hidden max-w-[864px];
+}
+
+/* scrollbar style */
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #8f54a0 #ffffff00;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+	width: 7px;
+	width: 7px;
+}
+*::-webkit-scrollbar-track {
+	border-radius: 7px;
+	background-color: #ffffff00;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background-color: #ffffff22;
+}
+
+*::-webkit-scrollbar-track:active {
+	background-color: #c2c2c222;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #8f54a0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #774685;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background-color: #774685;
+}
