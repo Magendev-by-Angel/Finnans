@@ -46,7 +46,7 @@ const Input = ({ label, type, value, setValue, checker }: InputProps) => {
 
 const Form = () => {
 	const [
-		[usernmae, setUsername],
+		[username, setUsername],
 		[email, setEmail],
 		[password, setPassword],
 		[repPassword, setRepPassword]
@@ -60,7 +60,7 @@ const Form = () => {
 	return (
 		<form action="" className="form-log-reg">
 			<div className="h-[87%] w-4/5 flex flex-col ">
-				<h1 className="form-log-reg-h1">Sign up!</h1>
+				<h1 className="form-log-reg-h1 font-semibold">Sign up!</h1>
 				<div className="form-log-reg-message">
 					Say goodbye to overspending and hello to financial freedom.
 					Join Finnas and start tracking your expenses with ease
@@ -69,7 +69,7 @@ const Form = () => {
 					type="text"
 					label="username"
 					setValue={setUsername}
-					value={usernmae}
+					value={username}
 				/>
 				<Input
 					type="email"

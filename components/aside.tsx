@@ -16,7 +16,9 @@ const Aside = () => {
 							month, and year.
 						</div>
 						<div className="flex mt-4">
-							<div>Icon</div>
+							<div className="bg-gray-500 rounded-md p-2 aspect-square">
+								Icon
+							</div>
 							<div className="ml-2">
 								<div className="text-sm font-bold">
 									John Smith

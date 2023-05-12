@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .redirect-link {
@@ -13,10 +13,10 @@
 	@apply bg-[#523869] text-white w-full rounded-md p-2 hover:bg-[#49315e];
 }
 .form-terms-of-service {
-	@apply flex text-[#535353] font-semibold text-sm justify-center mt-4 flex-auto items-end w-full;
+	@apply flex text-[#535353] text-sm justify-center mt-4 flex-auto items-end w-full;
 }
 .form-signin-login-box {
-	@apply flex text-[#535353] font-semibold text-sm w-full justify-center mt-4;
+	@apply flex text-[#535353]  text-sm w-full justify-center mt-4;
 }
 .form-log-reg-h1 {
 	@apply xl:text-black text-white w-full flex justify-center text-4xl;
