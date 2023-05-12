@@ -38,24 +38,33 @@ const NavBar = () => {
 		{ href: '/about', label: 'About' },
 		{ href: '/contactus', label: 'Contact us' }
 	]
-	return (
-		<div
-			className="
-            bg-[#42339C19]
-            flex
-            p-4
-            
-        "
-		>
-			<div className="flex justify-center items-center w-1/5">Logo</div>
-			<div className="flex justify-start  w-1/2">
-				{Links.map(({ href, label }) => (
-					<NavLink href={href}>{label}</NavLink>
-				))}
+	const path = usePathname()
+	if (path === '/login' || path === '/register') {
+		return <></>
+	} else {
+		return (
+			<div
+				className="
+				bg-[#42339C19]
+				flex
+				p-4
+				
+			"
+			>
+				<div className="flex justify-center items-center w-1/5">
+					Logo
+				</div>
+				<div className="flex justify-start  w-1/2">
+					{Links.map(({ href, label }) => (
+						<NavLink href={href}>{label}</NavLink>
+					))}
+				</div>
+				<div className="flex justify-center items-center w-1/5">
+					Logout
+				</div>
 			</div>
-			<div className="flex justify-center items-center w-1/5">Logout</div>
-		</div>
-	)
+		)
+	}
 }
 
 export default NavBar

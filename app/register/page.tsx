@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Link from 'next/link'
 import Aside from '../../components/aside'
 // import { useRouter, usePathname } from 'next/navigation'
 
@@ -7,20 +8,32 @@ type InputProps = {
 	label: string
 	type: string
 	value: string
+	checker?: string
 	setValue: React.Dispatch<React.SetStateAction<string>>
 }
-const Input = ({ label, type, value, setValue }: InputProps) => {
+const Input = ({ label, type, value, setValue, checker }: InputProps) => {
+	const [notMatch, setNotMatch] = useState<string>('')
 	return (
 		<>
-			<label htmlFor={label} className="text-[#535353] mt-4">
+			<label
+				htmlFor={label}
+				className="xl:text-[#7B7979] mt-4 text-[#a3a1a1] ml-2"
+			>
 				{label}
 			</label>
 			<input
 				type={type}
-				className="w-full rounded-md p-2 text-black"
+				className={`w-full rounded-md p-2 text-black ${notMatch}`}
 				value={value}
 				onChange={e => {
 					e.preventDefault()
+					if (checker) {
+						if (checker !== e.target.value) {
+							setNotMatch('focus:outline-2 focus:outline-red-600')
+						} else {
+							setNotMatch('')
+						}
+					}
 					setValue(e.target.value)
 				}}
 				id={label}
@@ -30,21 +43,34 @@ const Input = ({ label, type, value, setValue }: InputProps) => {
 		</>
 	)
 }
+
 const Form = () => {
-	const [[password, setPassword], [email, setEmail]] = [
+	const [
+		[usernmae, setUsername],
+		[email, setEmail],
+		[password, setPassword],
+		[repPassword, setRepPassword]
+	] = [
+		useState<string>(''),
+		useState<string>(''),
 		useState<string>(''),
 		useState<string>('')
 	]
-	// (property) InputHTMLAttributes<HTMLInputElement>.value?: string | number | readonly string[]
 
 	return (
 		<form action="" className="form-log-reg">
 			<div className="h-[87%] w-4/5 flex flex-col ">
-				<h1 className="form-log-reg-h1">Welcome</h1>
+				<h1 className="form-log-reg-h1">Sign up!</h1>
 				<div className="form-log-reg-message">
 					Say goodbye to overspending and hello to financial freedom.
 					Join Finnas and start tracking your expenses with ease
 				</div>
+				<Input
+					type="text"
+					label="username"
+					setValue={setUsername}
+					value={usernmae}
+				/>
 				<Input
 					type="email"
 					label="email"
@@ -57,28 +83,27 @@ const Form = () => {
 					setValue={setPassword}
 					value={password}
 				/>
-				<a href="/#" className="text-[#8B72A3] flex justify-end my-4">
-					Forgot password?
-				</a>
-				<button className="form-submit-button">Login</button>
-				<span className="w-full flex justify-center my-8 text-[#7B7979] text-sm">
-					or
-				</span>
-				<button className="bg-white text-[#A1A1A1] w-full rounded-md p-2 hover:bg-[#f5f5f5]">
-					Continue with google
-				</button>
+				<Input
+					type="password"
+					label="repeat password"
+					setValue={setRepPassword}
+					value={repPassword}
+					checker={password}
+				/>
+				<span className="py-4" />
+				<button className="form-submit-button">Create account</button>
 				<div className="form-signin-login-box">
-					You don’t have an account yet?
-					<a href="/register" className="redirect-link">
-						Sign up
-					</a>
+					Do you already have an account?
+					<Link href="/login" className="redirect-link">
+						Log in
+					</Link>
 				</div>
 				<div className="form-terms-of-service">
 					<div className="w-4/5 text-center">
-						by creating and account you agree to our
-						<a href="#" className="redirect-link">
+						by creating an account you agree to our
+						<Link href="#" className="redirect-link">
 							Terms of Service
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -90,8 +115,8 @@ const Page = () => {
 	return (
 		<section className="w-screen h-screen flex justify-center items-center">
 			<main className="main-log-reg">
-				<Aside />
 				<Form />
+				<Aside />
 			</main>
 		</section>
 	)
