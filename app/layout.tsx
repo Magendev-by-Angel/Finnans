@@ -4,6 +4,7 @@ export const metadata = {
 }
 
 import './globals.css'
+import NavBar from './navBar'
 export default function RootLayout({
 	children
 }: {
@@ -11,8 +12,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="bg-black">
-				<div>{children}</div>
+			<body className="bg-gradient-to-br from-[#1D0E29] to-black text-white">
+				<NavBar />
+				<div className="w-full flex justify-center">
+					<div className="w-full">{children}</div>
+				</div>
 			</body>
 		</html>
 	)
