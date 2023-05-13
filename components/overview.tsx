@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { CgSpinner } from 'react-icons/cg'
 const monthNames = [
 	'January',
 	'February',
@@ -25,8 +26,8 @@ const days = [
 
 const Loader = () => {
 	return (
-		<div className="w-full h-full flex justify-center items-center bg-red-500">
-			loader
+		<div className="h-10">
+			<CgSpinner className="text-white animate-spin" />
 		</div>
 	)
 }
