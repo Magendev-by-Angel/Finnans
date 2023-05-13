@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Spend from './Spent'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
 		{periods.map(period => (
@@ -16,24 +17,20 @@ const Amounts = ({ amounts }) => (
 )
 
 const Dashboard = () => {
-	const [today, setToday] = useState<number>(0)
+	/* const [today, setToday] = useState<number>(0)
 	const [week, setWeek] = useState<number>(0)
 	const [month, setMonth] = useState<number>(0)
-	const [lastMonth, setLastMonth] = useState<number>(0)
+	const [lastMonth, setLastMonth] = useState<number>(0) */
 
 	return (
-		<section className="border-t mt-4 border-[#ffffff15] flex justify-center">
-			<div className="w-10/12 ">
-				<div className="w-full flex">
-					<div className="w-1/3 flex">
-						<Periods
-							periods={['today', 'week', 'month', 'lastMonth']}
-						/>
-						<Amounts amounts={[today, week, month, lastMonth]} />
-					</div>
-					<div className="w-2/3">right</div>
-				</div>
-				<div className="w-full ">.</div>
+		<section>
+			<div className="mx-[300px] grid grid-cols-3 grid-rows-2 h-[72.4vh] gap-9">
+				<Spend amount={59000} />
+				<h1 className="col-span-2 font font-semibold text-4xl py-9">
+					Views
+				</h1>
+				<h1>other more</h1>
+				<h1 className="col-span-2">this final</h1>
 			</div>
 		</section>
 	)

@@ -49,16 +49,19 @@ const Overview = () => {
 		]
 		setDate({ Date: date, Day: days[Day], Month: monthNames[Month], Year })
 	}, [])
+
 	return (
-		<section className="w-full flex justify-center">
+		<section className="w-full h-[200px] flex justify-center border-b border-[#ffffff15]">
 			<div className="w-8/12 flex">
-				<div className="w-1/2">
-					<h2 className="text-xl">Angel Zuniga</h2>
-					<div className="flex justify-start mt-4">
-						<h3 className="">{date ? date.Day : ''}</h3>
+				<div className="w-1/2 flex flex-col justify-center">
+					<h2 className="text-4xl font-semibold">Angel Zuniga</h2>
+					<div className="flex flex-col justify-start mt-4">
+						<h3 className="font-semibold text-2xl">
+							{date ? `${date.Day} ` : ''}
+						</h3>
 						<div>
 							{date ? (
-								`${date.Month} ${date.Date}, ${date.Year} `
+								` ${date.Month} ${date.Date}, ${date.Year} `
 							) : (
 								<Loader />
 							)}
@@ -66,15 +69,15 @@ const Overview = () => {
 					</div>
 				</div>
 				<div className="w-1/2 flex justify-center items-end flex-col">
-					<div className="text-xs text-[#ffffff55]">
-						Spent / Total
-					</div>
+					<div className="text-[#ffffff55] text-">Spent / Total</div>
 					<div className="text-2xl flex items-center">
-						<div className="text-2xl text-green-600">
+						<div className="text-2xl text-whitegreen">
 							$93.354,87
 						</div>
 						<div className="text-lg mx-2">/</div>
-						<div className="text-2xl text-purple-600">$150.000</div>
+						<div className="text-2xl text-whitepurple">
+							$150.000
+						</div>
 					</div>
 				</div>
 			</div>
