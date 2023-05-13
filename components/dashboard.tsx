@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Spend from './Spent'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
@@ -17,11 +16,6 @@ const Amounts = ({ amounts }) => (
 )
 
 const Dashboard = () => {
-	/* const [today, setToday] = useState<number>(0)
-	const [week, setWeek] = useState<number>(0)
-	const [month, setMonth] = useState<number>(0)
-	const [lastMonth, setLastMonth] = useState<number>(0) */
-
 	return (
 		<section>
 			<div className="mx-[300px] grid grid-cols-3 grid-rows-2 h-[72.4vh] gap-9">
