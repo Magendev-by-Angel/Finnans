@@ -56,7 +56,9 @@ const NavBar = () => {
 				</div>
 				<div className="flex justify-start  w-1/2">
 					{Links.map(({ href, label }) => (
-						<NavLink href={href}>{label}</NavLink>
+						<NavLink key={label} href={href}>
+							{label}
+						</NavLink>
 					))}
 				</div>
 				<div className="flex justify-center items-center w-1/5">
