@@ -6,6 +6,36 @@ interface InputProps {
 	amount: number
 }
 
+const SpentItems = ({ when, price }) => {
+	return (
+		<div className="mt-2">
+			{when.map(t => {
+				return (
+					<div key={t} className=" py-1 flex flex-row items-center">
+						<h2
+							className={
+								t === 'Last Month'
+									? 'font-medium text-md w-1/3'
+									: 'font-semibold text-lg w-1/3'
+							}
+						>
+							{t}
+						</h2>
+						<h2 className="w-1/3 text-center">{price}</h2>
+						<div className="w-1/3 flex justify-end mr-2">
+							{t === 'Month' ? (
+								<AiFillCaretUp className="text-whitegreen" />
+							) : (
+								<GoPrimitiveDot />
+							)}
+						</div>
+					</div>
+				)
+			})}
+		</div>
+	)
+}
+
 function Spent({ amount }: InputProps) {
 	const times = ['Today', 'Week', 'Month', 'Last Month']
 	const price = formatter(amount)
@@ -20,51 +50,10 @@ function Spent({ amount }: InputProps) {
 						<p className="font-light">status</p>
 					</div>
 				</div>
-				<div className="flex flex-col gap-3 mt-2">
-					{times.map(t => {
-						return (
-							<div
-								key={t}
-								className="flex flex-row justify-between"
-							>
-								<h2 className=" font-semibold text-lg">{t}</h2>
-								<h2
-									className={
-										t === 'Last Month'
-											? ' ml-[-12%] font-thin'
-											: null
-									}
-								>
-									{price}
-								</h2>
-								<div>
-									{t === 'Month' ? (
-										<AiFillCaretUp className="text-whitegreen" />
-									) : (
-										<GoPrimitiveDot />
-									)}
-								</div>
-							</div>
-						)
-					})}
-				</div>
+				<SpentItems when={times} price={price} />
 			</div>
 		</section>
 	)
 }
-/* 
-<tbody>
-					{times.map(t => {
-						return (
-							<tr>
-								<td className="pl-[16%] font-semibold text-lg">
-									{t}
-								</td>
-								<td>{amount}</td>
-								<td>'Icon'</td>
-							</tr>
-						)
-					})}
-				</tbody> */
 
 export default Spent

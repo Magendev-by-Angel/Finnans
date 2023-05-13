@@ -24,12 +24,12 @@ const Dashboard = () => {
 
 	return (
 		<section>
-			<div className="mx-[19rem] grid grid-cols-3 grid-rows-2 gap-4">
+			<div className="grid grid-cols-3 grid-rows-2 gap-4 px-[16%]">
 				<Spend amount={59000} />
 				<h1 className="col-span-2 font font-semibold text-4xl py-9">
 					Views
 				</h1>
-				<h1>other more</h1>
+				<h1 className="font font-semibold text-4xl py-9">Purchases</h1>
 				<h1 className="col-span-2">this final</h1>
 			</div>
 		</section>
