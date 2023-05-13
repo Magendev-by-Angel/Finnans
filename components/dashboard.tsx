@@ -24,7 +24,7 @@ const Dashboard = () => {
 
 	return (
 		<section>
-			<div className="mx-[300px] grid grid-cols-3 grid-rows-2 h-[72.4vh] gap-9">
+			<div className="mx-[19rem] grid grid-cols-3 grid-rows-2 gap-4">
 				<Spend amount={59000} />
 				<h1 className="col-span-2 font font-semibold text-4xl py-9">
 					Views
