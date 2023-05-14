@@ -1,4 +1,5 @@
 import Spend from './Spent'
+import Views from './views'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
 		{periods.map(period => (
@@ -17,14 +18,18 @@ const Amounts = ({ amounts }) => (
 
 const Dashboard = () => {
 	return (
-		<section>
-			<div className="mx-[300px] grid grid-cols-3 grid-rows-2 h-[72.4vh] gap-9">
-				<Spend amount={59000} />
-				<h1 className="col-span-2 font font-semibold text-4xl py-9">
-					Views
-				</h1>
-				<h1>other more</h1>
-				<h1 className="col-span-2">this final</h1>
+		<section className="mt-4 border-[#ffffff15] flex justify-center">
+			<div className="w-10/12 ">
+				<div className="w-full flex">
+					<div className="w-1/3 flex justify-center">
+						<Spend amount={59000} />
+					</div>
+					<div className="w-2/3">
+						<Views />
+					</div>
+				</div>
+
+				<div className="w-full ">.</div>
 			</div>
 		</section>
 	)
