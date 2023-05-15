@@ -1,4 +1,7 @@
 'use client'
+
+import { useEffect, useState } from 'react'
+
 const randomIntFromInterval = (min: number, max: number) => {
 	return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -87,23 +90,30 @@ const Bar = ({ value, id, isLowest, percentage, date }: BarProps) => {
 	)
 }
 
+const dates = ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']
+const days = [
+	{ day: 'Monday', date: 'May 1, 2023' },
+	{ day: 'Tuesday', date: 'May 2, 2023' },
+	{ day: 'Wednesday', date: 'May 3, 2023' },
+	{ day: 'Thursday', date: 'May 4, 2023' },
+	{ day: 'Friday', date: 'May 5, 2023' },
+	{ day: 'Saturday', date: 'May 6, 2023' },
+	{ day: 'Sunday', date: 'May 7, 2023' }
+]
+
 const Views = () => {
-	const data = []
-	for (let i = 0; i < 7; i++) {
-		data.push(randomIntFromInterval(0, 100) * 1000)
-	}
-	const dates = ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']
-	const days = [
-		{ day: 'Monday', date: 'May 1, 2023' },
-		{ day: 'Tuesday', date: 'May 2, 2023' },
-		{ day: 'Wednesday', date: 'May 3, 2023' },
-		{ day: 'Thursday', date: 'May 4, 2023' },
-		{ day: 'Friday', date: 'May 5, 2023' },
-		{ day: 'Saturday', date: 'May 6, 2023' },
-		{ day: 'Sunday', date: 'May 7, 2023' }
-	]
-	const highest = roundUpNumber(getHighest(data))
-	const lowest = getLowest(data)
+	const [data,setData] = useState<number[]>([])
+	const [highest,setHighest] = useState<number>(0)
+	const [lowest,setLowest] = useState<number>(0)
+	useEffect(() => {
+		const data = []
+		for (let i = 0; i < 7; i++) {
+			data.push(randomIntFromInterval(0, 100) * 1000)
+		}
+		setHighest(roundUpNumber(getHighest(data)))
+		setLowest(getLowest(data))
+		setData(data)
+	}, [])
 	return (
 		<section className="w-full h-full flex flex-wrap">
 			<div className="w-full">
@@ -111,7 +121,7 @@ const Views = () => {
 			</div>
 			<div className="border-l-[#979797] border-b-[#979797] w-4/5 h-[18rem] border-l-[1px] border-b-[1px] relative">
 				<div className="flex justify-evenly items-end w-full h-full z-10 absolute">
-					{data.map((value, id) => {
+					{data.length===0?<></>:data.map((value, id) => {
 						// console.log(lowest === id)
 						return (
 							<Bar
