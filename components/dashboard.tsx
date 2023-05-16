@@ -1,4 +1,7 @@
+import Doughnuts from './Doughnuts'
 import Spend from './Spent'
+
+import Purchases from './purchases'
 import Views from './views'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
@@ -28,8 +31,14 @@ const Dashboard = () => {
 						<Views />
 					</div>
 				</div>
-
-				<div className="w-full ">.</div>
+				<div className="w-full flex">
+					<div className="w-1/3 flex justify-center">
+						<Purchases />
+					</div>
+					<div className="w-2/3">
+						<Doughnuts />
+					</div>
+				</div>
 			</div>
 		</section>
 	)
