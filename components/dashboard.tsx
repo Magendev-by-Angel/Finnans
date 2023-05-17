@@ -1,8 +1,7 @@
-import Doughnuts from './Doughnuts'
-import Spend from './Spent'
-
-import Purchases from './purchases'
-import Views from './views'
+import Doughnuts from './dashboardComp/Doughnuts'
+import Spend from './dashboardComp/Spent'
+import Purchases from './dashboardComp/purchases'
+import Views from './dashboardComp/views'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
 		{periods.map(period => (
@@ -31,11 +30,11 @@ const Dashboard = () => {
 						<Views />
 					</div>
 				</div>
-				<div className="w-full flex">
+				<div className="w-full flex pt-8">
 					<div className="w-1/3 flex justify-center">
 						<Purchases />
 					</div>
-					<div className="w-2/3">
+					<div className="w-2/3 ">
 						<Doughnuts />
 					</div>
 				</div>

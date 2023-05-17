@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import formatter from '../util/formatter'
+import formatter from '../../util/formatter'
 
 const Purchase = ({ item }) => {
 	return (
@@ -42,21 +42,21 @@ const Purchases = () => {
 			{
 				icon: 'icon',
 				Recurring: false,
-				Date: '5 Apr 2023',
+				Date: '05/04/23',
 				Amount: 12000,
 				Status: 'Paid'
 			},
 			{
 				icon: 'icon',
 				Recurring: true,
-				Date: '3 Apr 2023',
+				Date: '03/04/23',
 				Amount: 120000,
 				Status: 'Declined'
 			},
 			{
 				icon: 'icon',
 				Recurring: false,
-				Date: '1 Apr 2023',
+				Date: '01/04/23',
 				Amount: 320000,
 				Status: 'Pending'
 			}
@@ -65,11 +65,11 @@ const Purchases = () => {
 	return (
 		<div className="w-full flex justify-center items-center">
 			<div className="flex w-4/5 flex-wrap">
-				<h1 className="text-4xl w-full">Purchases</h1>
+				<h1 className="font-semibold text-4xl py-4 w-full">Purchases</h1>
 				<div className="w-full flex-wrap">
 					{purchasesList.length > 0 ? (
-						purchasesList.map(item => {
-							return <Purchase item={item} />
+						purchasesList.map((item,i) => {
+							return <Purchase item={item} key={i}/>
 						})
 					) : (
 						<></>

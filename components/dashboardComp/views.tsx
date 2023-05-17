@@ -117,7 +117,7 @@ const Views = () => {
 	return (
 		<section className="w-full h-full flex flex-wrap">
 			<div className="w-full">
-				<h1 className="text-[24px]">Views</h1>
+				<h1 className="font-semibold text-4xl py-4 w-full">Views</h1>
 			</div>
 			<div className="border-l-[#979797] border-b-[#979797] w-4/5 h-[18rem] border-l-[1px] border-b-[1px] relative">
 				<div className="flex justify-evenly items-end w-full h-full z-10 absolute">
