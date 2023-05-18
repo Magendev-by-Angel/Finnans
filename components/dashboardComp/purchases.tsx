@@ -22,10 +22,10 @@ const Purchase = ({ item }) => {
                 rounded-md
                 ${
 					item.Status === 'Paid'
-						? `bg-[#70E9AF] text-[#148F43]`
+						? `bg-colorGo-bg text-colorGo-text `
 						: item.Status === 'Declined'
-						? `bg-[#FFEBEB] text-[#CC5A5D]`
-						: `bg-[#FEF5E6] text-[#DFA62E]`
+						? `bg-colorAlert-bg text-colorAlert-text`
+						: `bg-colorDanger-bg text-colorDanger-text`
 				}
             `}
 			>

@@ -1,5 +1,5 @@
 import Doughnuts from './dashboardComp/Doughnuts'
-import Spend from './dashboardComp/Spent'
+import Spent from './dashboardComp/Spent'
 import Purchases from './dashboardComp/purchases'
 import Views from './dashboardComp/views'
 const Periods = ({ periods }) => (
@@ -20,11 +20,11 @@ const Amounts = ({ amounts }) => (
 
 const Dashboard = () => {
 	return (
-		<section className="mt-4 border-[#ffffff15] flex justify-center">
+		<section className="mt-4 flex justify-center">
 			<div className="w-10/12 ">
 				<div className="w-full flex">
 					<div className="w-1/3 flex justify-center">
-						<Spend amount={59000} />
+						<Spent amount={59000} />
 					</div>
 					<div className="w-2/3">
 						<Views />

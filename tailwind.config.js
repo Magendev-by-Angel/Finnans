@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import colors from './tailwindConfig/colors'
+import boxShadow from './tailwindConfig/boxShadow'
 module.exports = {
 	content: [
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,11 +9,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-			colors: {
-				table: 'rgba(130, 119, 141, 0.2)',
-				whitegreen: '#70E9AF',
-				whitepurple: '#B176EB'
-			}
+			colors,
+			boxShadow
+			
 		}
 	},
 	plugins: []

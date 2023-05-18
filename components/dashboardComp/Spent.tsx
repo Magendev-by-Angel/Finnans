@@ -12,8 +12,8 @@ function Spent({ amount }: InputProps) {
 	return (
 		<section className="flex flex-col gap-1 w-4/5">
 			<h1 className="font-semibold text-4xl py-4">Spent</h1>
-			<div className="bg-table rounded-xl w-[100%] p-5">
-				<div className="border-b border-[#ffffff15] w-full pb-2">
+			<div className="bg-table rounded-xl w-full p-5">
+				<div className="border-b border-Transparent-300 w-full pb-2">
 					<div className="flex flex-row justify-between items-center">
 						<p className=" w-1/3 flex justify-start font-light">
 							when
@@ -41,7 +41,7 @@ function Spent({ amount }: InputProps) {
 								</h2>
 								<div className="w-1/3 flex justify-end items-center">
 									{t === 'Month' ? (
-										<AiFillCaretUp className="text-whitegreen" />
+										<AiFillCaretUp className="text-tealgreen" />
 									) : (
 										<GoPrimitiveDot />
 									)}
@@ -54,19 +54,5 @@ function Spent({ amount }: InputProps) {
 		</section>
 	)
 }
-/* 
-<tbody>
-					{times.map(t => {
-						return (
-							<tr>
-								<td className="pl-[16%] font-semibold text-lg">
-									{t}
-								</td>
-								<td>{amount}</td>
-								<td>'Icon'</td>
-							</tr>
-						)
-					})}
-				</tbody> */
 
 export default Spent

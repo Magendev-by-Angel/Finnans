@@ -49,7 +49,7 @@ const Doughnuts = ()=>{
         )
     },[])
     return <div className="w-full h-full flex justify-start items-center">
-        <div className="w-full h-full flex justify-center items-center bg-[#82778D33] rounded-lg">
+        <div className="w-full h-full flex justify-center items-center bg-darkPurple20-300 rounded-lg">
             <div className='w-full h-full flex justify-evenly items-center '>
                 {dataD.length>0?
                     dataD.map((item,i)=>{

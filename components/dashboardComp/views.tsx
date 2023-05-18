@@ -56,8 +56,10 @@ const Bar = ({ value, id, isLowest, percentage, date }: BarProps) => {
 	return (
 		<div
 			className={`w-6 ${
-				isLowest ? 'bg-[#70E9AF] ' : 'bg-[#82778D] '
-			} hover:bg-[#B176EB] rounded-t hover:cursor-pointer relative display-direct-child`}
+				isLowest
+					? 'bg-tealgreen hover:shadow-tealgreen'
+					: 'bg-darkPurple-300 hover:shadow-whitepurple-300 hover:bg-whitepurple-300'
+			}  rounded-t hover:cursor-pointer relative display-direct-child hover:shadow-default`}
 			style={{
 				height: percentage
 			}}
@@ -72,7 +74,7 @@ const Bar = ({ value, id, isLowest, percentage, date }: BarProps) => {
                     left-[130%] 
                     justify-center 
                     items-center 
-                    bg-[#D9D9D933] 
+                    bg-Transparent-200 
                     backdrop-blur-sm 
                     flex-wrap 
                     min-w-[8rem] 
@@ -102,9 +104,9 @@ const days = [
 ]
 
 const Views = () => {
-	const [data,setData] = useState<number[]>([])
-	const [highest,setHighest] = useState<number>(0)
-	const [lowest,setLowest] = useState<number>(0)
+	const [data, setData] = useState<number[]>([])
+	const [highest, setHighest] = useState<number>(0)
+	const [lowest, setLowest] = useState<number>(0)
 	useEffect(() => {
 		const data = []
 		for (let i = 0; i < 7; i++) {
@@ -119,22 +121,26 @@ const Views = () => {
 			<div className="w-full">
 				<h1 className="font-semibold text-4xl py-4 w-full">Views</h1>
 			</div>
-			<div className="border-l-[#979797] border-b-[#979797] w-4/5 h-[18rem] border-l-[1px] border-b-[1px] relative">
+			<div className="border-l-gray-401 border-b-gray-401 w-4/5 h-[18rem] border-l-[1px] border-b-[1px] relative">
 				<div className="flex justify-evenly items-end w-full h-full z-10 absolute">
-					{data.length===0?<></>:data.map((value, id) => {
-						// console.log(lowest === id)
-						return (
-							<Bar
-								value={value}
-								id={id}
-								isLowest={lowest === value}
-								percentage={`${(
-									Math.ceil((value / highest) * 1000) / 10
-								).toString()}%`}
-								date={days[id]}
-							/>
-						)
-					})}
+					{data.length === 0 ? (
+						<></>
+					) : (
+						data.map((value, id) => {
+							// console.log(lowest === id)
+							return (
+								<Bar
+									value={value}
+									id={id}
+									isLowest={lowest === value}
+									percentage={`${(
+										Math.ceil((value / highest) * 1000) / 10
+									).toString()}%`}
+									date={days[id]}
+								/>
+							)
+						})
+					)}
 				</div>
 				<div className="flex items-end w-full h-full absolute top-0 left-0 ">
 					<div className="flex items-end w-full h-full flex-wrap">

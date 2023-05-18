@@ -8,7 +8,7 @@ const Aside = () => {
 					your finances.
 				</div>
 				<div className="h-2/5 flex flex-wrap items-end">
-					<div className="w-full bg-[#82778D33] p-4 rounded-xl">
+					<div className="w-full bg-darkPurple20-300 p-4 rounded-xl">
 						<div className="text-xs text-[11px] font-thin overflow-auto">
 							I've been using Finnas for a few weeks now and it's
 							been a game-changer for me. It's so easy to track my

@@ -53,7 +53,7 @@ const Overview = () => {
 	}, [])
 
 	return (
-		<section className="w-full py-4 flex justify-center border-b border-[#ffffff15]">
+		<section className="w-full py-4 flex justify-center border-b border-Transparent-50">
 			<div className="w-8/12 flex">
 				<div className="w-1/2 flex flex-col justify-center">
 					<h2 className="text-4xl font-semibold">Angel Zuniga</h2>
@@ -71,13 +71,15 @@ const Overview = () => {
 					</div>
 				</div>
 				<div className="w-1/2 flex justify-center items-end flex-col">
-					<div className="text-[#ffffff55] text-">Spent / Total</div>
+					<div className="text-Transparent-600 text-">
+						Spent / Total
+					</div>
 					<div className="text-2xl flex items-center">
-						<div className="text-2xl text-whitegreen">
+						<div className="text-2xl text-tealgreen">
 							$93.354,87
 						</div>
 						<div className="text-lg mx-2">/</div>
-						<div className="text-2xl text-whitepurple">
+						<div className="text-2xl text-whitepurple-300">
 							$150.000
 						</div>
 					</div>

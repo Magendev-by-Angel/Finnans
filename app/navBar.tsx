@@ -45,7 +45,7 @@ const NavBar = () => {
 		return (
 			<div
 				className="
-				bg-[#42339C19]
+				bg-darkPurple10-500
 				flex
 				p-4
 				
