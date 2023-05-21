@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Spend from './Spent'
+import Purchases from './Purchases'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
 		{periods.map(period => (
@@ -17,10 +18,26 @@ const Amounts = ({ amounts }) => (
 )
 
 const Dashboard = () => {
-	/* const [today, setToday] = useState<number>(0)
-	const [week, setWeek] = useState<number>(0)
-	const [month, setMonth] = useState<number>(0)
-	const [lastMonth, setLastMonth] = useState<number>(0) */
+	const purchases = [
+		{
+			type: 'one-time',
+			amount: 50000,
+			status: 'paid',
+			date: '13 May 2023'
+		},
+		{
+			type: 'recurring',
+			amount: 25000,
+			status: 'pending',
+			date: '20 Jun 2023'
+		},
+		{
+			type: 'one-time',
+			amount: 75000,
+			status: 'declined',
+			date: '5 Jul 2023'
+		}
+	]
 
 	return (
 		<section>
@@ -29,7 +46,7 @@ const Dashboard = () => {
 				<h1 className="col-span-2 font font-semibold text-4xl py-9">
 					Views
 				</h1>
-				<h1 className="font font-semibold text-4xl py-9">Purchases</h1>
+				<Purchases purchase={purchases} />
 				<h1 className="col-span-2">this final</h1>
 			</div>
 		</section>
