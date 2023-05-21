@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Spend from './Spent'
 import Purchases from './Purchases'
 const Periods = ({ periods }) => (
@@ -18,6 +17,7 @@ const Amounts = ({ amounts }) => (
 )
 
 const Dashboard = () => {
+
 	const purchases = [
 		{
 			type: 'one-time',
@@ -38,7 +38,6 @@ const Dashboard = () => {
 			date: '5 Jul 2023'
 		}
 	]
-
 	return (
 		<section>
 			<div className="grid grid-cols-3 grid-rows-2 gap-4 px-[16%]">
