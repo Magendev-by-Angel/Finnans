@@ -7,13 +7,9 @@
 	font-family: 'Inter', sans-serif;
 }
 
-
-
 .views-lines {
-	@apply h-[1.5rem] w-full border-t-[1px] border-t-[#97979742]:
+	@apply h-[1.5rem] w-full border-t-[1px] border-t-[#97979742]:;
 }
-
-
 
 .redirect-link {
 	@apply ml-1 font-medium text-[#82778D] relative after: content-[''] after:w-0 after:h-px after:bg-[#82778D] after:absolute after:left-0 after:bottom-0 hover:after:w-full;
@@ -49,7 +45,7 @@
 
 /* --------------------------------------- toggle show --------------------------------------- */
 
-.display-direct-child:hover>div {
+.display-direct-child:hover > div {
 	@apply flex;
 }
 
