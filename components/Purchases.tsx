@@ -3,7 +3,7 @@ import formatter from '../util/formatter'
 
 const StatusTag = ({ state }): JSX.Element => {
 	const statusColor = {
-		paid: 'bg-paidgreenbg text-paidgreenfg',
+		paid: 'bg-whitegreen text-paidgreenfg',
 		declined: 'bg-declinedredbg text-declinedredfg',
 		pending: 'bg-pendingyellowbg text-pendingyellowfg'
 	}

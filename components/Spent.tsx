@@ -40,10 +40,10 @@ function Spent({ amount }: InputProps) {
 	const times = ['Today', 'Week', 'Month', 'Last Month']
 	const price = formatter(amount)
 	return (
-		<section className="flex flex-col gap-1">
-			<h1 className="font-semibold text-4xl py-9">Spent</h1>
+		<section className="flex flex-col gap-1 w-4/5">
+			<h1 className="font-semibold text-4xl py-4">Spent</h1>
 			<div className="bg-table rounded-xl w-full p-5">
-				<div className="border-b border-[#ffffff15] w-full pb-2">
+				<div className="border-b border-table w-full pb-2">
 					<div className="flex flex-row justify-between items-center">
 						<p className="font-thin">when</p>
 						<p className="font-light">amount</p>

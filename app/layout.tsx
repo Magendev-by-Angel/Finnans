@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="bg-gradient-to-br from-[#1D0E29] to-black text-white">
+			<body className="bg-gradient-to-br from-[#1D0E29] to-black text-white min-h-screen">
 				<NavBar />
 				<div className="w-full flex justify-center">
 					<div className="w-full">{children}</div>
