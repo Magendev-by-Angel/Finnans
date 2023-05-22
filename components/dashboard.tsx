@@ -1,5 +1,7 @@
-import Spend from './Spent'
+import Spent from './Spent'
 import Purchases from './Purchases'
+import Views from './views'
+import Doughnuts from './dashboardComp/Doughnuts'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
 		{periods.map(period => (
@@ -39,14 +41,24 @@ const Dashboard = () => {
 		}
 	]
 	return (
-		<section>
-			<div className="grid grid-cols-3 grid-rows-2 gap-4 px-[16%]">
-				<Spend amount={59000} />
-				<h1 className="col-span-2 font font-semibold text-4xl py-9">
-					Views
-				</h1>
-				<Purchases purchase={purchases} />
-				<h1 className="col-span-2">this final</h1>
+		<section className="mt-4 flex justify-center">
+			<div className="w-10/12 ">
+				<div className="w-full flex">
+					<div className="w-1/3 flex justify-center">
+						<Spent amount={59000} />
+					</div>
+					<div className="w-2/3">
+						<Views />
+					</div>
+				</div>
+				<div className="w-full flex pt-8">
+					<div className="w-1/3 flex justify-center">
+						<Purchases purchase={purchases} />
+					</div>
+					<div className="w-2/3 ">
+						<Doughnuts />
+					</div>
+				</div>
 			</div>
 		</section>
 	)
