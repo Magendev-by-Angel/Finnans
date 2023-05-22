@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoPrimitiveDot } from 'react-icons/go'
 import { AiFillCaretUp } from 'react-icons/ai'
-import formatter from '../util/formatter'
+import formatter from '../../util/formatter'
 interface InputProps {
 	amount: number
 }

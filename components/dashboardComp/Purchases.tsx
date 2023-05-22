@@ -1,5 +1,5 @@
 import React from 'react'
-import formatter from '../util/formatter'
+import formatter from '../../util/formatter'
 
 const StatusTag = ({ state }): JSX.Element => {
 	const statusColor = {
@@ -50,7 +50,7 @@ const PurchaseItem = ({ purchases }): JSX.Element => {
 function Purchases({ purchase }) {
 	return (
 		<>
-			<div className=" flex flex-col">
+			<div className="flex flex-col w-4/5">
 				<h1 className="font font-semibold text-4xl py-9">Purchases</h1>
 				<PurchaseItem purchases={purchase} />
 			</div>

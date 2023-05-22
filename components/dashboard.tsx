@@ -1,6 +1,6 @@
-import Spent from './Spent'
-import Purchases from './Purchases'
-import Views from './views'
+import Spent from './dashboardComp/Spent'
+import Purchases from './dashboardComp/Purchases'
+import Views from './dashboardComp/views'
 import Doughnuts from './dashboardComp/Doughnuts'
 const Periods = ({ periods }) => (
 	<div className="w-1/2 flex items-start flex-col">
