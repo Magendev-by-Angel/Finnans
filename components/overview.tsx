@@ -52,7 +52,7 @@ const Overview = () => {
 	}, [])
 
 	return (
-		<section className="w-full py-8 flex justify-center border-b border-[#ffffff15]">
+		<section className="w-full py-8 flex justify-center border-b border-table">
 			<div className="w-8/12 flex">
 				<div className="w-1/2 flex flex-col justify-center">
 					<h2 className="text-4xl font-semibold">Angel Zuniga</h2>

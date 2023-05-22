@@ -9,9 +9,8 @@ module.exports = {
     extend: {
       colors: {
         table: "rgba(130, 119, 141, 0.2)",
-        whitegreen: "#70E9AF",
+        whitegreen: "#72e9af",
         whitepurple: "#B176EB",
-        paidgreenbg: "#70E9AF",
         paidgreenfg: "#148F43",
         declinedredbg: "#FFEBEB",
         declinedredfg: "#CC5A5D",
