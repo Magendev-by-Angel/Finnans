@@ -7,8 +7,6 @@
 	font-family: 'Inter', sans-serif;
 }
 
-
-
 .views-lines {
 	@apply h-[1.5rem] w-full border-t-[1px] border-t-[#97979742];
 }
@@ -47,7 +45,7 @@
 
 /* --------------------------------------- toggle show --------------------------------------- */
 
-.display-direct-child:hover>div {
+.display-direct-child:hover > div {
 	@apply flex;
 }
 
